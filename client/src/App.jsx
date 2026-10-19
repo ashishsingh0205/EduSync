@@ -1,4 +1,4 @@
-
+import API from "./api";
 import { useEffect, useState } from "react";
 import {
   BrowserRouter,
@@ -11,7 +11,7 @@ import Auth from "./Auth";
 import "./App.css";
 import LearningPage from "./LearningPage";
 
-const API = "http://localhost:5000";
+
 
 function Home() {
   const [courses, setCourses] = useState([]);
@@ -224,7 +224,7 @@ function Home() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/enrollments/enroll",
+        `${API}/api/enrollments/enroll`,
         {
           method: "POST",
           headers: {

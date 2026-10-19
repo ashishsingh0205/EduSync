@@ -1,4 +1,5 @@
 import { useState } from "react";
+import API from "./api";
 import { Link, useNavigate } from "react-router-dom";
 import "./Auth.css";
 
@@ -29,7 +30,7 @@ function Auth({ mode }) {
       const endpoint = isRegister ? "register" : "login";
 
       const response = await fetch(
-        `http://localhost:5000/api/auth/${endpoint}`,
+    `${API}/api/auth/${endpoint}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
